@@ -47,7 +47,7 @@ public class Knapsack {
 				}
 			}
 		}
-		
+	
 //		System.out.println("Max sum:" + d[W][n]);
 //
 //		for (int i = 0; i <= W; i++) {
@@ -57,7 +57,6 @@ public class Knapsack {
 //			System.out.print(i + " ");
 //		}
 //		System.out.println("\n----------------------------------------------");
-//        // some comment
 //		for (int j = 0; j <= n; j++) {
 //			for (int i = 0; i <= W; i++) {
 //				if (Integer.toString(products[i][j]).length() < 2) {
