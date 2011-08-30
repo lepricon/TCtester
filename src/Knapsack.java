@@ -48,6 +48,7 @@ public class Knapsack {
 			}
 		}
 
+        // some comment
 		for (int i = 0; i <= W; i++) {
 			for (int j = 0; j <= n; j++) {
 				System.out.print(products[i][j] + " ");
