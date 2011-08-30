@@ -47,20 +47,45 @@ public class Knapsack {
 				}
 			}
 		}
-
-        // some comment
-		for (int i = 0; i <= W; i++) {
-			for (int j = 0; j <= n; j++) {
-				System.out.print(products[i][j] + " ");
-			}
-			System.out.println();
-		}
+		
+//		System.out.println("Max sum:" + d[W][n]);
+//
+//		for (int i = 0; i <= W; i++) {
+//			if (i < 10) {
+//				System.out.print(" ");
+//			}
+//			System.out.print(i + " ");
+//		}
+//		System.out.println("\n----------------------------------------------");
+//        // some comment
+//		for (int j = 0; j <= n; j++) {
+//			for (int i = 0; i <= W; i++) {
+//				if (Integer.toString(products[i][j]).length() < 2) {
+//					System.out.print(" ");
+//				}
+//				System.out.print(products[i][j] + " ");
+//			}
+//			System.out.println();
+//		}
+//		System.out.println();
+//		for (int j = 0; j <= n; j++) {
+//			for (int i = 0; i <= W; i++) {
+//				if (Integer.toString(d[i][j]).length() < 2) {
+//					System.out.print(" ");
+//				}
+//				System.out.print(d[i][j] + " ");
+//			}
+//			System.out.println();
+//		}
 
 		int[] result = new int[n];
-		int w = W;
-		while (w > 0) {
-			result[products[w][0]]++;
-			w = products[w][1];
+		int j = n, w = W;
+		while (j >= 0) {
+			if (products[w][j] > 0) {
+				result[j-1]++;
+				w = products[w][j];
+			}
+			j--;
 		}
 
 		return result;
@@ -68,8 +93,8 @@ public class Knapsack {
 
 	public static void main(String[] args) {
 		Knapsack ks = new Knapsack();
-		int[] weights = {12, 2, 1, 4, 1};
-		int[] costs = {4, 2, 1, 10, 2};
+		int[] weights = {1, 12, 2, 1, 4};
+		int[] costs = {2, 4, 2, 1, 10};
 		int W = 15;
 		int[] result = ks.mostValuableTuple0_1(weights, costs, W);
 		for (int i = 0; i < weights.length; i++) {
